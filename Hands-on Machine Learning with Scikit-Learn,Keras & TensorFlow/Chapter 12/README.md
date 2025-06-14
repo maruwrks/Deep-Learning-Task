@@ -1,7 +1,3 @@
-# Chapter 12: Custom Models and Training with TensorFlow
-
-Berikut adalah penjelasan teoretis untuk setiap bagian dari kode Chapter 12, berdasarkan isi buku *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* edisi ke-2.
-
 ---
 
 ## 1. Data Loading dan Preprocessing
