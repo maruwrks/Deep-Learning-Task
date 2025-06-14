@@ -75,3 +75,23 @@ for epoch in range(epochs):
             loss = loss_fn(y_true, y_pred)
         gradients = tape.gradient(loss, model.trainable_variables)
         optimizer.apply_gradients(zip(gradients, model.trainable_variables))
+```
+##⚡ TF Functions dan Graph Execution
+@tf.function:
+- Mengkonversi fungsi Python jadi computation graph
+- Efisien, portabel, dan bisa diparalelkan
+
+AutoGraph:
+- Konversi struktur Python (for, if, while) menjadi graph
+- Harus gunakan tf.range, bukan range
+
+Aturan:
+- Hindari print(), random, atau Python ops yang tidak konversi
+- Semua operasi harus dalam bentuk TensorFlow ops
+
+##🎯 Kapan Harus Kustom?
+- Arsitektur unik (loop, skip connections, dynamic branching)
+- Pelatihan non-standar (multi-loss, multi-optimizer)
+- Logging dan debugging manual
+- Penelitian dan eksplorasi model baru
+
