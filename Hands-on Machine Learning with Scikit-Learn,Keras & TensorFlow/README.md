@@ -7,24 +7,24 @@
 ## Daftar Isi dan Halaman
 
 * Chapter 1: The Machine Learning Landscape - Page 1
-* Chapter 2: End-to-End Machine Learning Project - Page 37
-* Chapter 3: Classification - Page 79
-* Chapter 4: Training Models - Page 123
-* Chapter 5: Support Vector Machines - Page 147
-* Chapter 6: Decision Trees - Page 179
-* Chapter 7: Ensemble Learning and Random Forests - Page 199
-* Chapter 8: Dimensionality Reduction - Page 229
-* Chapter 9: Unsupervised Learning Techniques - Page 249
-* Chapter 10: Introduction to Artificial Neural Networks - Page 273
-* Chapter 11: Training Deep Neural Nets - Page 309
-* Chapter 12: Custom Models and Training with TensorFlow - Page 349
-* Chapter 13: Loading and Preprocessing Data with TensorFlow - Page 385
-* Chapter 14: Deep Computer Vision Using CNNs - Page 413
-* Chapter 15: Processing Sequences Using RNNs and CNNs - Page 453
-* Chapter 16: Natural Language Processing with RNNs and Attention - Page 485
-* Chapter 17: Representation Learning and Self-Supervised Learning - Page 519
-* Chapter 18: Transformer Architecture - Page 543
-* Chapter 19: Training and Tuning Deep Models - Page 579
+* Chapter 2: End-to-End Machine Learning Project - Page 35
+* Chapter 3: Classification - Page 85
+* Chapter 4: Training Models - Page 111
+* Chapter 5: Support Vector Machines - Page 153
+* Chapter 6: Decision Trees - Page 175
+* Chapter 7: Ensemble Learning and Random Forests - Page 189
+* Chapter 8: Dimensionality Reduction - Page 213
+* Chapter 9: Unsupervised Learning Techniques - Page 235
+* Chapter 10: Introduction to Artificial Neural Networks - Page 279
+* Chapter 11: Training Deep Neural Networks - Page 331
+* Chapter 12: Custom Models and Training with TensorFlow - Page 375
+* Chapter 13: Loading and Preprocessing Data with TensorFlow - Page 413
+* Chapter 14: Deep Computer Vision Using CNNs - Page 445
+* Chapter 15: Processing Sequences Using RNNs and CNNs - Page 497
+* Chapter 16: Natural Language Processing with RNNs and Attention - Page 525
+* Chapter 17: Representation Learning Generative Learning Using Autoencoders and GANs - Page 567
+* Chapter 18: Reinforcement Learning - Page 609
+* Chapter 19: Training and Deployment TensorFlow Models at Scale - Page 667
 
 ---
 
