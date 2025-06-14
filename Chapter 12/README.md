@@ -1,20 +1,54 @@
-Konsep-konsep utama yang dibahas meliputi:
+Bab ini membahas bagaimana menggunakan TensorFlow secara lebih fleksibel dan mendalam dibandingkan pendekatan standar menggunakan tf.keras. Tujuan utamanya adalah memberikan kontrol penuh kepada pengguna terhadap proses pembuatan model, fungsi aktivasi, metrik, algoritma pelatihan, dan sebagainya.
 
-Penggunaan TensorFlow seperti NumPy: Bab ini dimulai dengan pengenalan tensor, variabel, dan operasi dasar di TensorFlow, menunjukkan bagaimana ia dapat digunakan untuk komputasi numerik yang efisien, terutama dengan dukungan GPU.
-Komponen Kustom: Anda belajar cara membuat komponen tf.keras Anda sendiri dari awal:
-Custom Loss & Metrics: Membuat fungsi loss dan metrik yang spesifik untuk masalah Anda, di luar yang sudah disediakan Keras.
-Custom Layers: Merancang layer dengan bobot dan logika unik yang tidak ada di Keras.
-Custom Models: Membangun model yang kompleks dengan arsitektur non-sekuensial (misalnya, yang memiliki banyak input/output atau skip connections) dengan mewarisi kelas keras.Model.
-Custom Training Loop: Anda diajarkan cara menulis loop pelatihan secara manual. Ini memberi Anda kontrol penuh atas setiap langkah, seperti bagaimana gradien dihitung dan diterapkan, yang berguna untuk implementasi algoritma riset tingkat lanjut.
-TensorFlow Functions dan Graphs: Konsep paling penting untuk kinerja adalah @tf.function. Dekorator ini mengubah fungsi Python menjadi grafik komputasi (computation graph) TensorFlow yang sangat dioptimalkan. Fitur AutoGraph secara otomatis mengubah logika kontrol Python (seperti for dan if) menjadi operasi grafik yang efisien, sehingga menghasilkan peningkatan kecepatan yang drastis.
-Secara keseluruhan, bab ini adalah jembatan antara penggunaan Keras yang praktis dan kekuatan penuh TensorFlow untuk riset dan implementasi tingkat lanjut.
+1. Pengantar TensorFlow
+TensorFlow adalah framework untuk komputasi numerik yang mendukung eksekusi pada GPU/TPU dan komputasi terdistribusi. Di bab ini, TensorFlow digunakan untuk:
 
+Membuat model secara manual
 
-Hasil dan Penjelasan
+Mengelola tensor dan variabel seperti di NumPy
 
-Waktu Eager Execution (Python Loop): 1.1527 detik
-Waktu TF Function (Graph Loop): 0.3078 detik
-Hasil di atas (angka pastinya akan bervariasi tergantung perangkat keras Anda, namun trennya akan sama) dengan jelas menunjukkan kekuatan dari @tf.function.
+Menyusun fungsi-fungsi komputasi sebagai graph (menggunakan @tf.function)
 
-Waktu Eager Execution (Python Loop): Versi ini berjalan lambat karena loop for dieksekusi oleh interpreter Python. Pada setiap iterasi, Python harus berkomunikasi dengan backend TensorFlow untuk menjalankan operasi total += i. Komunikasi bolak-balik ini menimbulkan overhead yang signifikan.
-Waktu TF Function (Graph Loop): Versi ini jauh lebih cepat karena dekorator @tf.function menggunakan AutoGraph untuk mengubah seluruh perulangan Python menjadi satu operasi tf.while_loop tunggal di dalam grafik TensorFlow. Seluruh proses perulangan kemudian dieksekusi di backend C++ yang sangat dioptimalkan, tanpa perlu kembali ke Python sama sekali. Biaya tracing di awal menjadi tidak signifikan dibandingkan keuntungan kecepatan yang didapat dari eksekusi grafik.
+2. TensorFlow seperti NumPy
+TensorFlow mendukung operasi numerik seperti NumPy, namun dengan kelebihan berupa kemampuan menjalankan operasi di berbagai perangkat keras. Konsep dasar seperti tensor, operasi matematis, slicing, dan broadcasting dibahas di sini. TensorFlow juga memiliki struktur data tambahan seperti tf.Variable (untuk nilai yang dapat berubah).
+
+3. Kustomisasi Komponen Model
+Bagian ini menjelaskan cara membuat komponen-komponen berikut secara manual:
+
+Fungsi Loss Kustom: Digunakan saat loss standar tidak mencukupi, misalnya Huber loss.
+
+Fungsi Aktivasi, Inisialisasi, dan Regularisasi Kustom: Dibuat dengan mendefinisikan fungsi atau class baru.
+
+Metrik Kustom: Berguna untuk evaluasi model berdasarkan logika yang lebih spesifik.
+
+Layer Kustom: Dengan mewarisi tf.keras.layers.Layer, pengguna dapat membuat arsitektur unik.
+
+Model Kustom: Dengan mewarisi tf.keras.Model, pengguna bisa mendefinisikan model yang kompleks, misalnya dengan banyak cabang atau residual connections.
+
+4. Training Loop Kustom
+Bagian ini menjelaskan bagaimana membuat loop pelatihan manual, alih-alih menggunakan .fit() dari Keras. Ini memberi fleksibilitas penuh dalam mengatur:
+
+Forward pass
+
+Perhitungan loss
+
+Perhitungan dan penerapan gradien
+
+Logging metrik dan checkpoint
+
+5. Autodiff dan Gradient Tape
+TensorFlow menyediakan tf.GradientTape, sebuah API untuk menghitung gradien secara otomatis. Ini penting saat membuat loop training manual dan memungkinkan proses backpropagation dilakukan secara eksplisit.
+
+6. TensorFlow Function dan Graph
+Dengan @tf.function, pengguna dapat mengubah fungsi Python biasa menjadi computation graph untuk optimisasi performa. Fitur ini mendukung "AutoGraph" yang mampu mengkonversi struktur Python seperti if, for, dan while.
+
+7. Kapan Harus Menggunakan Pendekatan Kustom?
+Pendekatan ini direkomendasikan saat:
+
+Membangun model arsitektur unik yang tidak bisa diwujudkan dengan Sequential atau Functional API
+
+Membutuhkan logika pelatihan khusus, misalnya penggunaan beberapa optimizer
+
+Melakukan riset atau eksplorasi arsitektur baru
+
+Melakukan debugging model dengan cara manual
