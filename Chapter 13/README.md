@@ -4,7 +4,7 @@ Bab ini membahas cara memuat dan memproses data secara efisien menggunakan Tenso
 
 ---
 
-## 🌟 Tujuan
+## Tujuan
 
 * Mengelola data berskala besar secara efisien
 * Membuat pipeline data menggunakan `tf.data.Dataset`
@@ -14,7 +14,7 @@ Bab ini membahas cara memuat dan memproses data secara efisien menggunakan Tenso
 
 ---
 
-## 📦 1. The `tf.data` API
+## 1. The `tf.data` API
 
 API `tf.data` digunakan untuk membuat pipeline input data yang efisien dan dapat dikustomisasi.
 
@@ -35,7 +35,7 @@ dataset = dataset.shuffle(1000).batch(32).prefetch(1)
 
 ---
 
-## 🧪 2. Preprocessing Data
+## 2. Preprocessing Data
 
 Preprocessing dapat dilakukan langsung di pipeline dengan `.map()`.
 
@@ -58,7 +58,7 @@ Transformasi umum:
 
 ---
 
-## 📀 3. TFRecord Format
+## 3. TFRecord Format
 
 TFRecord adalah format biner untuk menyimpan data secara efisien dalam skala besar.
 
@@ -86,7 +86,7 @@ parsed_dataset = raw_dataset.map(parse_example)
 
 ---
 
-## 📦 4. Protocol Buffers
+## 4. Protocol Buffers
 
 TFRecord menyimpan data dalam format protobuf (`tf.train.Example`). Untuk data sekuensial, gunakan `tf.train.SequenceExample`.
 
@@ -98,7 +98,7 @@ Langkah-langkah:
 
 ---
 
-## 🔢 5. Handling Sequences: SequenceExample
+## 5. Handling Sequences: SequenceExample
 
 Untuk data seperti:
 
@@ -110,7 +110,7 @@ Gunakan `SequenceExample` untuk menyimpan nested lists.
 
 ---
 
-## 🌤️ 6. Encoding Kategorikal
+##  6. Encoding Kategorikal
 
 ### One-Hot Encoding
 
@@ -124,7 +124,7 @@ Gunakan `SequenceExample` untuk menyimpan nested lists.
 
 ---
 
-## 🧱 7. Keras Preprocessing Layers
+## 7. Keras Preprocessing Layers
 
 Preprocessing dapat dilakukan dalam model menggunakan layer berikut:
 
@@ -143,7 +143,7 @@ Keuntungan:
 
 ---
 
-## ⚙️ 8. TF Transform (TFT)
+## 8. TF Transform (TFT)
 
 Untuk preprocessing skala besar dalam pipeline produksi (misalnya di GCP/TFX):
 
@@ -153,7 +153,7 @@ Untuk preprocessing skala besar dalam pipeline produksi (misalnya di GCP/TFX):
 
 ---
 
-## 🌍 9. TensorFlow Datasets (TFDS)
+## 9. TensorFlow Datasets (TFDS)
 
 TFDS menyediakan dataset populer siap pakai:
 
