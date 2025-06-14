@@ -87,20 +87,3 @@ Loss_generator: Binary crossentropy antara [fake images predicted as real=1]
 Setelah setiap epoch, gambar dari generator divisualisasikan untuk mengevaluasi kualitas.
 
 ---
-
-## Kesimpulan
-
-Chapter ini menjelaskan:
-
-* **Autoencoder** untuk kompresi dan denoising.
-* **VAE** untuk pembelajaran distribusi probabilistik dan generasi data.
-* **GAN** untuk menghasilkan data sintetik yang realistis.
-
-Ketiganya penting dalam aplikasi seperti:
-
-* Penghilangan noise gambar
-* Kompresi fitur
-* Generasi gambar realistis
-* Anomaly detection
-
-Model-model ini merepresentasikan fondasi dalam *unsupervised deep learning* dan kreativitas AI modern.
