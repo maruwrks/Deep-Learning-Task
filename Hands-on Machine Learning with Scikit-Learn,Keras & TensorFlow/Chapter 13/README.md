@@ -112,14 +112,3 @@ model.predict(X_new)
 * Prediksi dilakukan pada data baru yang belum pernah dilihat model.
 
 ---
-
-## ✅ Kesimpulan
-
-Kode ini mendemonstrasikan:
-
-* Penggunaan pipeline data dengan `tf.data`
-* Membaca dan parsing CSV secara efisien
-* Membangun preprocessing sebagai bagian dari model
-* Pelatihan dan evaluasi regresi menggunakan TensorFlow
-
-Pendekatan ini cocok untuk data besar dan produksi karena scalable, efisien, dan mudah di-deploy.
