@@ -1,5 +1,3 @@
----
-
 ## 1. Data Loading dan Preprocessing
 
 ```python
