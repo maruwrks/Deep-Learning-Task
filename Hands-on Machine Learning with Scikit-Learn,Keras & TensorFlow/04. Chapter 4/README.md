@@ -11,7 +11,7 @@ Model linier digunakan untuk memodelkan hubungan antara satu atau lebih fitur nu
 * **Normal Equation**:
 
   * Solusi langsung dari persamaan linier:
-    \$\theta = (X^TX)^{-1}X^Ty\$\
+    \$\theta = (X^TX)^{-1}X^Ty\$
 * **Scikit-Learn**: Menggunakan `LinearRegression()`
 * **SVD (Singular Value Decomposition)**: Alternatif lebih stabil terhadap inversi matriks
 
