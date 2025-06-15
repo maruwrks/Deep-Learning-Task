@@ -2,7 +2,7 @@
 
 ---
 
-## 🗃️ 1. Persiapan dan Eksplorasi Data
+## 1. Persiapan dan Eksplorasi Data
 
 ### • Fetching & Loading
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 🤸‍♂️ 2. Feature Engineering
+## 2. Feature Engineering
 
 ### • Fitur Baru:
 
@@ -33,7 +33,7 @@ Fitur ini menunjukkan korelasi lebih baik dengan target (`median_house_value`).
 
 ---
 
-## ✅ 3. Splitting Dataset
+## 3. Splitting Dataset
 
 Beberapa strategi splitting digunakan:
 
@@ -45,7 +45,7 @@ Stratifikasi digunakan untuk menjaga proporsi data penting.
 
 ---
 
-## 🔄 4. Preprocessing Pipeline
+## 4. Preprocessing Pipeline
 
 ### • Numerical:
 
@@ -62,7 +62,7 @@ Pipeline dibangun dengan `ColumnTransformer` untuk menggabungkan pipeline numeri
 
 ---
 
-## 📊 5. Model Dasar
+## 5. Model Dasar
 
 ### a. Linear Regression
 
@@ -80,7 +80,7 @@ Pipeline dibangun dengan `ColumnTransformer` untuk menggabungkan pipeline numeri
 
 ---
 
-## 🔢 6. Evaluasi dengan Cross Validation
+## 6. Evaluasi dengan Cross Validation
 
 Cross-validation dilakukan (10-fold):
 
@@ -90,7 +90,7 @@ Cross-validation dilakukan (10-fold):
 
 ---
 
-## ⚖️ 7. Hyperparameter Tuning
+## 7. Hyperparameter Tuning
 
 Menggunakan `GridSearchCV`:
 
@@ -99,7 +99,7 @@ Menggunakan `GridSearchCV`:
 
 ---
 
-## 🔹 8. Feature Importance
+## 8. Feature Importance
 
 Setelah training, ditampilkan fitur-fitur terpenting untuk model terbaik (RandomForest).
 
@@ -111,7 +111,7 @@ Fitur paling penting:
 
 ---
 
-## 📊 9. Evaluasi Akhir di Test Set
+## 9. Evaluasi Akhir di Test Set
 
 * RMSE akhir dihitung pada `strat_test_set`
 * Confidence interval (95%) untuk generalisasi error dihitung menggunakan distribusi `t`
@@ -119,24 +119,3 @@ Fitur paling penting:
 ```python
 confidence_interval = np.sqrt(stats.t.interval(...))
 ```
-
----
-
-## 💼 Kesimpulan
-
-* Proyek ini menunjukkan pipeline lengkap Machine Learning:
-
-  * Mulai dari pengumpulan data
-  * Eksplorasi dan visualisasi
-  * Feature engineering
-  * Training model dan tuning hyperparameter
-  * Evaluasi akhir
-
-* Random Forest adalah model paling andal dari eksperimen ini.
-
----
-
-## 📖 Referensi
-
-* A. Géron, *Hands-On Machine Learning*, Chapter 2
-* Dataset: California Housing (from StatLib)
