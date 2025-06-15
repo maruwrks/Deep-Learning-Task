@@ -102,17 +102,3 @@ Model meng-output Q-values untuk semua aksi dalam satu langkah.
 
 ---
 
-## Evaluasi dan Visualisasi
-
-Setelah pelatihan, kedua agen diuji secara deterministik (tanpa eksplorasi). Lingkungan divisualisasikan dengan `env.render()` untuk melihat performa.
-
----
-
-## Kesimpulan
-
-Kode ini mencakup dua metode RL:
-
-* **Policy Gradient** untuk pendekatan berbasis optimisasi langsung kebijakan.
-* **Deep Q-Network** untuk pendekatan berbasis nilai (value-based).
-
-Keduanya memiliki peran penting dalam membangun agen cerdas yang dapat belajar dari trial-and-error di lingkungan interaktif.
